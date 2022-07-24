@@ -3,7 +3,8 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 HEADERS = PhoneBook.h  Contact.h Libft.h
 	  
 SRC = main.cpp\
-	  CheckInput.cpp
+	  CheckInput.cpp\
+	  PhoneBook.cpp
 
 
 OBJ = $(SRC:.cpp=.o)

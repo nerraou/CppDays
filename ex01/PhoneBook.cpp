@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nouhayla <nouhayla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 19:45:04 by nerraou           #+#    #+#             */
-/*   Updated: 2022/07/22 20:42:03 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/07/24 16:33:16 by nouhayla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@ PhoneBook::PhoneBook(void)
 void PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickName,
 						   std::string phonenumber, std::string darkestSecret)
 {
-	if (index > 8)
+	if (index >= 7)
 		index = 0;
-	else
-		index++;
 	ContactsArray[index].DarkestSecret = darkestSecret;
 	ContactsArray[index].firstName = firstName;
 	ContactsArray[index].lastName = lastName;
 	ContactsArray[index].nickName = nickName;
 	ContactsArray[index].PhoneNumber = phonenumber;
+	index++;
 }
 
 int PhoneBook::getContact(int contactIndex)
 {
-	if (contactIndex >= 0 && contactIndex <= 7)
+	if (contactIndex >= 0 && contactIndex < 8)
 		return 1;
 	return -1;
 }
@@ -41,7 +40,9 @@ int PhoneBook::getContact(int contactIndex)
 void PhoneBook::DisplayContact(int contactIndex)
 {
 	if (getContact(contactIndex) == -1)
-		std::cout << "This index is out of range, please chopse an index between 0 and 7" << std::endl;
+		std::cout << "This index is out of range, please choose an index between 0 and 7" << std::endl;
+	else if (contactIndex > index)
+		std::cout << "This index is not in the Contacts array" << std::endl;
 	else
 	{
 		std::cout << ContactsArray[contactIndex].firstName << std::endl;
@@ -66,7 +67,7 @@ void PhoneBook::DisplayField(std::string str)
 
 	else
 	{
-		min = len - 10;
+		min = 10 - len;
 		while (min)
 		{
 			std::cout << " ";
@@ -81,14 +82,17 @@ void PhoneBook::DisplayContacts()
 	int i;
 
 	i = 0;
+	std::cout << index << std::endl;
 	while (i < index)
 	{
 		std::cout << "         " << i;
+		std::cout << "|";
 		DisplayField(ContactsArray[i].firstName);
 		std::cout << "|";
 		DisplayField(ContactsArray[i].lastName);
 		std::cout << "|";
 		DisplayField(ContactsArray[i].nickName);
 		std::cout << std::endl;
+		i++;
 	}
 }
