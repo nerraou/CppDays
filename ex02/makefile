@@ -1,11 +1,9 @@
-NAME = phonebook
+NAME = Account 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = PhoneBook.h  Contact.h Libft.h
+HEADERS = Account.hpp
 	  
-SRC = main.cpp\
-	  CheckInput.cpp\
-	  PhoneBook.cpp
-
+SRC = Account.cpp\
+	  tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
