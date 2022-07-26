@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 19:45:04 by nerraou           #+#    #+#             */
-/*   Updated: 2022/07/26 10:10:49 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:30:58 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void PhoneBook::AddContact(std::string firstName, std::string lastName, std::str
 	ContactsArray[index].nickName = nickName;
 	ContactsArray[index].PhoneNumber = phonenumber;
 	index++;
-	if (length < 3)
+	if (length < 8)
 		length++;
 }
 
@@ -44,7 +44,7 @@ void PhoneBook::DisplayContact(int contactIndex)
 {
 	if (getContact(contactIndex) == -1)
 		std::cout << "This index is out of range, please choose an index between 0 and 7" << std::endl;
-	else if (contactIndex > length)
+	else if (contactIndex >= index)
 		std::cout << "This index is not in the Contacts array" << std::endl;
 	else
 	{
@@ -67,7 +67,6 @@ void PhoneBook::DisplayField(std::string str)
 	{
 		std::cout << str.substr(0, 9) << ".";
 	}
-
 	else
 	{
 		min = 10 - len;
@@ -85,7 +84,6 @@ void PhoneBook::DisplayContacts()
 	int i;
 
 	i = 0;
-	std::cout << index << std::endl;
 	while (i < length)
 	{
 		std::cout << "         " << i;

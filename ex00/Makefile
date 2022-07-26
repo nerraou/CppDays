@@ -11,10 +11,10 @@ OBJ = $(SRC:.cpp=.o)
 all:  $(NAME)
 
 megaphone.o: megaphone.cpp
-	g++ $(CPPFLAGS) -o $@ -c $<
+	c++ $(CPPFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	g++  -o $(NAME) $^
+	c++  -o $(NAME) $^
 
 clean:
 	rm -f $(OBJ)
