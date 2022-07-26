@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 14:33:59 by nerraou           #+#    #+#             */
-/*   Updated: 2022/07/22 20:49:50 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/07/26 10:08:20 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class PhoneBook
 {
 	Contact ContactsArray[8];
 	int index;
+	int length;
 
 public:
 	PhoneBook(void);
