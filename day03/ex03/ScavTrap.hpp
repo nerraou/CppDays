@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 14:32:02 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/21 19:53:05 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/08/28 14:55:22 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ public:
 	ScavTrap &operator=(ScavTrap const &other);
 	void attack(const std::string &target);
 	void guardGate();
+	int	getEnergyPoint() const;
 	~ScavTrap();
 };

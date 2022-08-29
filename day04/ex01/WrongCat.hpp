@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 17:44:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/28 15:00:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/08/28 16:20:25 by nerraou           #+#    #+#             */
+/*   Updated: 2022/08/28 17:42:35 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#pragma once
 
-int main()
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	DiamondTrap d;
-
-	std::cout << d.getEnergyPoint() << std::endl;
-	std::cout << d.getHitPoint() << std::endl;
-
-	return 0;
-}
+private:
+public:
+    WrongCat();
+    WrongCat(const WrongCat &other);
+    WrongCat &operator=(const WrongCat &other);
+    std::string getType() const;
+    void makeSound() const;
+    ~WrongCat();
+};

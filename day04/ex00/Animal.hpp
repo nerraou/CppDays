@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 17:44:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/28 15:00:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/08/28 16:18:55 by nerraou           #+#    #+#             */
+/*   Updated: 2022/08/28 17:49:43 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+
+class Animal
 {
-	DiamondTrap d;
+protected:
+    std::string type;
 
-	std::cout << d.getEnergyPoint() << std::endl;
-	std::cout << d.getHitPoint() << std::endl;
-
-	return 0;
-}
+public:
+    Animal();
+    Animal(const Animal &other);
+    Animal &operator=(const Animal &other);
+    virtual std::string getType() const;
+    virtual void makeSound() const;
+    virtual ~Animal();
+};

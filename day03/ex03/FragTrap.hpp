@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:00:59 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/21 19:53:13 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/08/28 14:59:19 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ public:
 	FragTrap(const FragTrap &other);
 	FragTrap &operator=(FragTrap const &other);
 	void highFivesGuys(void);
+	int getHitPoint(void) const;
 	~FragTrap();
 };

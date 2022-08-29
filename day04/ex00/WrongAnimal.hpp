@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 17:44:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/28 15:00:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/08/28 16:18:55 by nerraou           #+#    #+#             */
+/*   Updated: 2022/08/29 14:30:57 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+
+class WrongAnimal
 {
-	DiamondTrap d;
+protected:
+    std::string type;
 
-	std::cout << d.getEnergyPoint() << std::endl;
-	std::cout << d.getHitPoint() << std::endl;
-
-	return 0;
-}
+public:
+    WrongAnimal();
+    WrongAnimal(const WrongAnimal &other);
+    WrongAnimal &operator=(const WrongAnimal &other);
+    std::string getType() const;
+    void makeSound() const;
+    ~WrongAnimal();
+};

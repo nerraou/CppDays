@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 17:44:34 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/28 15:00:00 by nerraou          ###   ########.fr       */
+/*   Created: 2022/08/28 16:20:25 by nerraou           #+#    #+#             */
+/*   Updated: 2022/08/29 16:40:07 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#pragma once
 
-int main()
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
 {
-	DiamondTrap d;
+private:
+    Brain *brain;
 
-	std::cout << d.getEnergyPoint() << std::endl;
-	std::cout << d.getHitPoint() << std::endl;
-
-	return 0;
-}
+public:
+    Cat();
+    Cat(const Cat &other);
+    Cat &operator=(const Cat &other);
+    std::string getType() const;
+    void makeSound() const;
+    ~Cat();
+};
