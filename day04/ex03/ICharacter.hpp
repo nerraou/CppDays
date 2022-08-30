@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 17:31:43 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/30 14:45:17 by nerraou          ###   ########.fr       */
+/*   Created: 2022/08/30 18:50:41 by nerraou           #+#    #+#             */
+/*   Updated: 2022/08/30 18:50:57 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+class ICharacter
 {
-
-    const Dog *j = new Dog();
-
-    Dog d;
-
-    d = *j;
-
-    std::cout << j->getType() << " " << std::endl;
-
-    j->makeSound();
-
-    delete j;
-    return 0;
-}
+public:
+    virtual ~ICharacter() {}
+    virtual std::string const &getName() const = 0;
+    virtual void equip(AMateria *m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter &target) = 0;
+};
