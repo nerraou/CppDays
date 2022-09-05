@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:05:47 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/04 17:40:31 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/05 10:49:51 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+    void signForm();
     Bureaucrat &operator=(Bureaucrat const &other);
     class GradeTooHighException : public std::exception
     {

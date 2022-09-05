@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:05:44 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/05 18:53:54 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/05 17:21:19 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,19 @@ void Bureaucrat::decrementGrade()
     }
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << "Bureaucrat " << getName() << " signed form " << form.getName() << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Bureaucrat " << getName() << " couldn’t sign " << form.getName() << " because his grade: " << getGrade() << " " << e.what() << std::endl;
+    }
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return ("Grade too high.");
@@ -81,7 +94,8 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other)
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &in)
 {
-    out << "Bureaucrat, name " << in.getName() << "with the grade " << in.getGrade() << std::endl;
+    out << in.getName() << std::endl;
+    out << in.getGrade() << std::endl;
     return (out);
 }
 

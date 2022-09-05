@@ -6,25 +6,23 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 18:38:06 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/04 11:41:18 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/05 18:41:51 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <iostream>
+
+#include "ICharacter.hpp"
 class AMateria
 {
-private:
-    /* data */
+protected:
 public:
-    AMateria(/* args */);
+    AMateria();
+    AMateria(std::string const &type);
+    std::string const &getType() const;
+    virtual AMateria *clone() const = 0;
+    virtual void use(ICharacter &target);
     ~AMateria();
 };
-
-AMateria::AMateria(/* args */)
-{
-}
-
-AMateria::~AMateria()
-{
-}
