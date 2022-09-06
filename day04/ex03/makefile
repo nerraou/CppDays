@@ -1,16 +1,13 @@
-NAME = Animal
+NAME = materia
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongCar.hpp WrongAnimal.hpp Brain.hpp
+HEADERS = AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp IMateriaSource.hpp Ice.hpp MateriaSource.hpp
 
-	  
 SRC = main.cpp\
-	  Animal.cpp\
-	  Dog.cpp\
-	  Cat.cpp\
-	  WrongAnimal.cpp\
-	  WrongCat.cpp\
-	  Brain.cpp
-
+	AMateria.cpp\
+	Character.cpp\
+	Cure.cpp\
+	Ice.cpp\
+	MateriaSource.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 

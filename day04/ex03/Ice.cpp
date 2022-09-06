@@ -23,6 +23,7 @@ void Ice::use(ICharacter &target)
 
 Ice &Ice::operator=(Ice const &other)
 {
+    (void)other;
     return (*this);
 }
 Ice::~Ice()

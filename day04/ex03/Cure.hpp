@@ -8,7 +8,7 @@ public:
     Cure();
     Cure(const Cure &other);
     Cure &operator=(Cure const &other);
-    AMateria *clone() const;
+     AMateria *clone() const;
     void use(ICharacter &target);
     ~Cure();
 };

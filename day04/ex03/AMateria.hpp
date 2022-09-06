@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 18:38:06 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/06 09:09:28 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/06 18:23:11 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 class AMateria
 {
 protected:
@@ -28,5 +30,5 @@ public:
     virtual void use(ICharacter &target);
     std::string getType();
     AMateria &operator=(AMateria const &other);
-    ~AMateria();
+    virtual ~AMateria();
 };

@@ -22,6 +22,7 @@ void Cure::use(ICharacter &target)
 }
 Cure &Cure::operator=(Cure const &other)
 {
+    (void)other;
     return (*this);
 }
 Cure::~Cure()

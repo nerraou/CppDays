@@ -6,13 +6,16 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 18:50:41 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/04 11:44:39 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/06 18:15:59 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
 class ICharacter
 {
 public:
