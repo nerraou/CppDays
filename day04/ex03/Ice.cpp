@@ -2,29 +2,29 @@
 
 Ice::Ice()
 {
-    this->type = "ice";
+	this->type = "ice";
 }
 
-Ice::Ice(const Ice &other)
+Ice::Ice(const Ice &other) : AMateria(other)
 {
-    *this = other;
+	*this = other;
 }
 
 AMateria *Ice::clone() const
 {
-    Ice *iceMateria = new Ice(*this);
-    return iceMateria;
+	Ice *iceMateria = new Ice(*this);
+	return iceMateria;
 }
 
 void Ice::use(ICharacter &target)
 {
-    std::cout << "Ice: shoots an ice bolt at " << target.getName() << std::endl;
+	std::cout << "Ice: shoots an ice bolt at " << target.getName() << std::endl;
 }
 
 Ice &Ice::operator=(Ice const &other)
 {
-    (void)other;
-    return (*this);
+	(void)other;
+	return (*this);
 }
 Ice::~Ice()
 {

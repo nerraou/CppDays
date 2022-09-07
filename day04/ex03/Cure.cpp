@@ -2,28 +2,28 @@
 
 Cure::Cure()
 {
-    this->type = "cure";
+	this->type = "cure";
 }
 
-Cure::Cure(const Cure &other)
+Cure::Cure(const Cure &other) : AMateria(other)
 {
-    *this = other;
+	*this = other;
 }
 
 AMateria *Cure::clone() const
 {
-    Cure *cureMateria = new Cure(*this);
-    return cureMateria;
+	Cure *cureMateria = new Cure(*this);
+	return cureMateria;
 }
 
 void Cure::use(ICharacter &target)
 {
-    std::cout << "Cure: heals " << target.getName() << " wounds" << std::endl;
+	std::cout << "Cure: heals " << target.getName() << " wounds" << std::endl;
 }
 Cure &Cure::operator=(Cure const &other)
 {
-    (void)other;
-    return (*this);
+	(void)other;
+	return (*this);
 }
 Cure::~Cure()
 {
