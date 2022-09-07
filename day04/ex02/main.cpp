@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 17:31:43 by nerraou           #+#    #+#             */
-/*   Updated: 2022/08/30 15:16:27 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/07 17:58:20 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@
 
 int main()
 {
+	AAnimal *animal = new Dog();
 
-    const Animal *j = new Dog();
-    // const Animal *animal = new Animal();
+	std::cout << animal->getType() << std::endl;
+	animal->makeSound();
 
-    std::cout << j->getType() << " " << std::endl;
-
-    j->makeSound();
-
-    delete j;
-    return 0;
+	delete animal;
+	return 0;
 }

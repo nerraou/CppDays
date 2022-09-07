@@ -1,10 +1,10 @@
 NAME = Animal
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongCar.hpp WrongAnimal.hpp Brain.hpp
+HEADERS = AAnimal.hpp Dog.hpp Cat.hpp WrongCar.hpp WrongAnimal.hpp Brain.hpp
 
 	  
 SRC = main.cpp\
-	  Animal.cpp\
+	  AAnimal.cpp\
 	  Dog.cpp\
 	  Cat.cpp\
 	  WrongAnimal.cpp\

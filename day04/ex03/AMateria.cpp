@@ -24,7 +24,6 @@ void AMateria::use(ICharacter &target)
 }
 AMateria &AMateria::operator=(AMateria const &other)
 {
-	// this->type = other.type;
 	(void)other;
 	return (*this);
 }
