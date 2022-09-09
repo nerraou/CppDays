@@ -6,28 +6,36 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:05:42 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/05 17:22:45 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/09 18:42:24 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "Form.hpp"
-
+#include <time.h>
 int main()
 {
-    try
-    {
-        Bureaucrat br("test", 14);
-        br.decrementGrade();
-        br.incrementGrade();
-        std::cout << br;
-        Form form("form", 100, 15);
-        br.signForm(form);
-    }
-    catch (std::exception &e)
-    {
-        std::cerr << (e.what()) << std::endl;
-    }
+	srand(time(0));
+	try
+	{
+		Bureaucrat br("BureaucratNoha", 4);
+		ShrubberyCreationForm form1("home");
+		RobotomyRequestForm form2("Noha");
+		PresidentialPardonForm form;
+		br.signForm(form);
+		br.executeForm(form);
+		br.signForm(form1);
+		br.executeForm(form1);
+		br.signForm(form2);
+		br.executeForm(form2);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << (e.what()) << std::endl;
+	}
 
-    return 0;
+	return 0;
 }

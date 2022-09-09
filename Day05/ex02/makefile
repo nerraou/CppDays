@@ -1,11 +1,15 @@
 NAME = Form
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = Bureaucrat.hpp Form.hpp
+HEADERS = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
 
 	  
 SRC = main.cpp\
 	  Bureaucrat.cpp\
-	  Form.cpp
+	  Form.cpp\
+	  ShrubberyCreationForm.cpp\
+	  PresidentialPardonForm.cpp\
+	  RobotomyRequestForm.cpp
+
 	
 
 
