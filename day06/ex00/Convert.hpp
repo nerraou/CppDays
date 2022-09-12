@@ -3,11 +3,15 @@
 #include <iostream>
 #include <cstdlib>
 #include <exception>
+#include <climits>
 
 class Convert
 {
 private:
-	std::string _num;
+	int _intNum;
+	float _floatNum;
+	double _doubleNum;
+	std::string _type;
 
 public:
 	Convert();

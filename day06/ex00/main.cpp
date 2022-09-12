@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <typeinfo>
 #include "Convert.hpp"
 
 int main(int ac, char *av[])
@@ -15,6 +15,10 @@ int main(int ac, char *av[])
 				std::cout << "float: nanf" << std::endl;
 			else
 				std::cout << a << std::endl;
+			double b = static_cast<double>(conv);
+			std::cout << b << std::endl;
+			int c = static_cast<int>(conv);
+			std::cout << c << std::endl;
 		}
 		catch (const std::exception &e)
 		{
