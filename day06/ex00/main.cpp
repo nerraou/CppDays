@@ -9,12 +9,14 @@ int main(int ac, char *av[])
 		Convert conv(av[1]);
 		try
 		{
+			char e = static_cast<char>(conv);
+			if (isprint(e))
+				std::cout << e << std::endl;
+			else
+				std::cout << "char: Non displayable" << std::endl;
 
 			float a = static_cast<float>(conv);
-			if (a != a)
-				std::cout << "float: nanf" << std::endl;
-			else
-				std::cout << a << std::endl;
+			std::cout << a << "f" << std::endl;
 			double b = static_cast<double>(conv);
 			std::cout << b << std::endl;
 			int c = static_cast<int>(conv);

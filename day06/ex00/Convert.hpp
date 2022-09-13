@@ -21,5 +21,6 @@ public:
 	operator float();
 	operator double();
 	operator int();
+	operator char();
 	~Convert();
 };
