@@ -14,10 +14,13 @@ private:
 	std::string _type;
 
 public:
+	bool _impossible;
 	Convert();
 	Convert(const char *num);
 	Convert(const Convert &other);
 	Convert &operator=(Convert const &other);
+	bool isFloat(std::string num);
+	bool isDouble(std::string num);
 	operator float();
 	operator double();
 	operator int();

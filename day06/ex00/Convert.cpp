@@ -14,7 +14,7 @@ Convert::Convert(const char *num)
 	}
 
 	char *str;
-	if (_num.find(".") != std::string::npos && _num.find("f") != std::string::npos)
+	if (isFloat(_num))
 	{
 		this->_floatNum = strtof(num, &str);
 		if (*str == 'f')
@@ -23,7 +23,7 @@ Convert::Convert(const char *num)
 			this->_type = "float";
 		return;
 	}
-	if (_num.find(".") != std::string::npos || _num.compare("nan") == 0)
+	if (isDouble(_num))
 	{
 		this->_doubleNum = strtod(num, &str);
 		if (*str == '\0')
@@ -41,6 +41,63 @@ Convert::Convert(const char *num)
 		else
 			this->_type = "undefined";
 	}
+}
+
+bool Convert::isFloat(std::string num)
+{
+	if (num.find("+") || num.find("-"))
+	{
+		if (num.compare("+inff") == 0 || num.compare("-inff") == 0)
+		{
+			this->_impossible = true;
+			return true;
+		}
+		if (num.compare("+nanf") == 0 || num.compare("-nanf") == 0)
+		{
+			this->_impossible = true;
+			return true;
+		}
+	}
+	if (num.compare("inff") == 0 || num.compare("nanf") == 0)
+	{
+		this->_impossible = true;
+		return true;
+	}
+	if ((num.find(".") != std::string::npos && num.find("f") != std::string::npos))
+	{
+		this->_impossible = false;
+		return true;
+	}
+	return false;
+}
+
+bool Convert::isDouble(std::string num)
+{
+	if (num.find("+") || num.find("-"))
+	{
+		if (num.compare("+inf") == 0 || num.compare("-inf") == 0)
+		{
+			this->_impossible = true;
+			return true;
+		}
+		if (num.compare("+nan") == 0 || num.compare("-nan") == 0)
+
+		{
+			this->_impossible = true;
+			return true;
+		}
+	}
+	if (num.compare("inf") == 0 || num.compare("nan") == 0)
+	{
+		this->_impossible = true;
+		return true;
+	}
+	if (num.find(".") != std::string::npos)
+	{
+		this->_impossible = false;
+		return true;
+	}
+	return false;
 }
 
 Convert::operator float()
@@ -98,7 +155,6 @@ Convert::operator char()
 	else
 		throw std::invalid_argument("impossible");
 }
-
 Convert::~Convert()
 {
 }
