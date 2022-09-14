@@ -6,7 +6,7 @@
 /*   By: nerraou <nerraou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 16:05:42 by nerraou           #+#    #+#             */
-/*   Updated: 2022/09/09 18:42:24 by nerraou          ###   ########.fr       */
+/*   Updated: 2022/09/14 09:13:15 by nerraou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "Form.hpp"
-#include <time.h>
+#include <ctime>
 int main()
 {
 	srand(time(0));
