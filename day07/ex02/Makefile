@@ -1,6 +1,6 @@
-NAME = iter
+NAME = array
 CPPFLAGS =  -Wextra -Werror -std=c++98
-HEADERS =  iter.hpp
+HEADERS =  Array.hpp
 
 		  
 SRC = main.cpp
