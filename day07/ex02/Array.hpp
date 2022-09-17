@@ -13,7 +13,7 @@ public:
 	Array()
 	{
 		this->_size = 0;
-		this->array = nullptr;
+		this->array = NULL;
 	}
 
 	Array(unsigned int n)
@@ -31,8 +31,8 @@ public:
 	{
 		this->_size = other.size();
 
-		if (other.array == nullptr)
-			this->array = nullptr;
+		if (other.array == NULL)
+			this->array = NULL;
 		else
 		{
 			this->array = new T[other._size];
