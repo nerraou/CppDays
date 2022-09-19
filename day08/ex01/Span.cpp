@@ -42,6 +42,7 @@ int Span::longestSpan()
 	}
 	return *std::max_element(vec.begin(), vec.end()) - *std::min_element(vec.begin(), vec.end());
 }
+
 Span::~Span()
 {
 }

@@ -14,6 +14,14 @@ public:
 	Span();
 	Span(unsigned int N);
 	void addNumber(int num);
+	template <class InputIterator>
+	void fillRange(InputIterator first, InputIterator last)
+	{
+		if (this->vec.size() + std::distance(first, last) <= this->_N)
+			this->vec.insert(this->vec.end(), first, last);
+		else
+			throw std::out_of_range("Out of range");
+	}
 	int shortestSpan();
 	int longestSpan();
 	~Span();
