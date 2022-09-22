@@ -9,6 +9,19 @@ Span::Span(unsigned int N)
 	this->_N = N;
 }
 
+Span::Span(const Span &other)
+{
+	*this = other;
+}
+
+Span &Span::operator=(const Span &other)
+{
+
+	this->_N = other._N;
+	this->vec = other.vec;
+	return *this;
+}
+
 void Span::addNumber(int num)
 {
 	if (this->vec.size() < this->_N)
@@ -19,7 +32,7 @@ void Span::addNumber(int num)
 		throw std::exception();
 }
 
-int Span::shortestSpan()
+int Span::shortestSpan(void)
 {
 	if (this->vec.size() < 2)
 	{
@@ -34,7 +47,7 @@ int Span::shortestSpan()
 	return *std::min_element(shortest.begin(), shortest.end());
 }
 
-int Span::longestSpan()
+int Span::longestSpan(void)
 {
 	if (this->vec.size() < 2)
 	{

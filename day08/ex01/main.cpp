@@ -1,11 +1,12 @@
 #include "Span.hpp"
 #include <iostream>
+#include <list>
 
 int main()
 {
 	Span var(5);
 
-	std::vector<int> vec;
+	std::list<int> vec;
 
 	var.addNumber(6);
 	var.addNumber(3);
